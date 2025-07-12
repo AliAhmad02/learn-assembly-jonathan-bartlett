@@ -12,7 +12,7 @@ array:
 
 _start:
   # Initialize value we are searching for
-  movq $67, %rbx
+  movq $39, %rbx
 
   # Initialize whether or not the value has been found
   movq $0, %rdi
@@ -32,7 +32,7 @@ loop:
   cmp %rbx, %rax
   je toindex
 
-loopcontrol:
+  # Otherwise, decrement %rcx. If we are done with the array, jmp to endloop
   loopq loop
   jmp endloop
 
